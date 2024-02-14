@@ -1,0 +1,56 @@
+@page
+@model ResponsiveImages.Pages.Index
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Images</title>
+    <link rel="stylesheet" href="~/css/pico.min.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true"/>
+</head>
+<body>
+<main class="container">
+    <h1>Responsive Images</h1>
+    <markdown>
+        Responsive images can be the difference between a slow and faaaaaast site. Using newer HTML features
+        provides developers with the flexibility to deliver amazing user experiences if they know what they're doing.
+
+        Below are two examples of using responsive images to deliver similar but different experiences.
+
+        Resize the page to see different images loads. Also try reloading with smaller and larger view ports with the cached disabled in Chrome dev tools.
+    </markdown>
+    <div class="grid">
+        <section>
+            <h2>Descriptive</h2>
+            <markdown>
+                Using `srcset` and `sizes` on an `img` tag to be descriptive. i.e. "This is what I'd like."
+            </markdown>
+            <img
+                srcset="/img/good-boy@3x.webp 2000w, /img/good-boy@2x.webp 1000w, /img/good-boy@1x.webp 500w"
+                sizes="100vw"
+                src="/img/good-boy@1x.webp"
+                alt="a good boy - corgi puppy"
+                decoding="async">
+        </section>
+        <section>
+            <h2>Prescriptive</h2>
+            <markdown>
+                Using the `picture` tag to specify sizing in a prescriptive way. i.e. "Just Do This!"
+            </markdown>
+            <picture>
+                <source media="(max-width: 500px)" width="500" height="738" srcset="/img/sad-boy@1x.webp">
+                <source media="(max-width: 1000px)" width="1000" height="1476" srcset="/img/sad-boy@2x.webp">
+                <source media="(min-width: 2000px)" width="2000" height="2952" srcset="/img/sad-boy@3x.webp">
+                <img src="/img/sad-boy@3x.webp" alt="a sad boy - French bulldog in a hoodie" loading="lazy">
+            </picture>
+        </section>
+    </div>
+</main>
+</body>
+</html>

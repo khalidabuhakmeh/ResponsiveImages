@@ -1,0 +1,31 @@
+:root {
+    --pico-border-radius: 2rem;
+    --pico-typography-spacing-vertical: 1.5rem;
+    --pico-form-element-spacing-vertical: 1rem;
+    --pico-form-element-spacing-horizontal: 1.25rem;
+}
+h1, h2 {
+    --pico-font-family: Pacifico, cursive;
+    --pico-font-weight: 400;
+    --pico-typography-spacing-vertical: 0.5rem;
+}
+
+h1 {
+    text-decoration: underline;
+    text-decoration-color: deeppink;
+}
+
+h2 {
+    filter: brightness(90%);
+    text-decoration: underline;
+    text-decoration-color: hotpink;
+}
+
+.grid section p {
+    min-height: 90px;
+}
+
+.grid section img {
+    border: 4px deeppink solid;
+    border-radius: 10px;
+}
